@@ -1,0 +1,111 @@
+.bannerCon {
+    background: $background1;
+    background: linear-gradient(328deg, #2a2a2f 0%, $background1 100%);
+    padding: 150px 0 370px;
+    max-width: 100%;
+    position: relative;
+    .wrapper {
+        position: relative;
+        display: flex;
+        z-index: 10;
+        .bannerCol1 {
+            width: 75%;
+            z-index: 10;
+            position: relative;
+            padding-right: 40px;
+            h1 {
+                font-size: 62px;
+                max-width: 505px;
+                color: $text1;
+                line-height: clamp(2.5rem, 5vw, 4rem);
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                font-family: 'drunkwidemedium', sans-serif;
+            }
+            .bannerBodyP {
+                max-width: 550px;
+                color: $text1;
+                margin-top: 50px;
+                line-height: 34px;
+                font-family: 'gilroymedium', sans-serif;
+            }
+        }
+        .bannerCol2 {
+            width: 25%;
+            position: relative;
+            // Banner img 2
+            .imgShape2 {
+                width: 850px;
+                overflow: hidden;
+                border-radius: 50%;
+                background-color: $accent3;
+                position: absolute;
+                left: 0;
+                top: -90px;
+                z-index: 0;
+                &::after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                }
+                .imgCon {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        background-position: center;
+                    }
+                } 
+            }
+        }
+        // Banner img 1
+        .imgShape1 {
+            width: 500px;
+            overflow: hidden;
+            border-radius: 50%;
+            background-color: $accent2;
+            position: absolute;
+            left: -540px;
+            top: 0;
+            z-index: 0;
+            &::after {
+                content: "";
+                display: block;
+                padding-bottom: 100%;
+            }
+            .imgCon {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 30%;
+                img {
+                    object-fit: cover;
+                    background-position: center;
+                }
+            }
+        }
+    }
+
+    //  Background Overlay
+    .bannerBg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 100%;
+            max-width: $maxWidth + 150px;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+    }
+}

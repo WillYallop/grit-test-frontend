@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'gilroybold';
+    src: url('/fonts/radomir_tinkov_-_gilroy-bold-webfont.woff2') format('woff2'),
+         url('/fonts/radomir_tinkov_-_gilroy-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroymedium';
+    src: url('/fonts/radomir_tinkov_-_gilroy-medium-webfont.woff2') format('woff2'),
+         url('/fonts/radomir_tinkov_-_gilroy-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroysemibold';
+    src: url('/fonts/radomir_tinkov_-_gilroy-semibold-webfont.woff2') format('woff2'),
+         url('/fonts/radomir_tinkov_-_gilroy-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'drunkwidemedium';
+    src: url('/fonts/DrukWide-Medium.woff2') format('woff2'),
+         url('/fonts/DrukWide-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, 
+body {
+    min-height: 100%;
+}
+body {
+    background: $background3;
+    background: linear-gradient(0deg, $background3 0%, $background4 100%);
+    font-family: 'gilroymedium', sans-serif;
+}
+::selection {background-color: $accent1; color: #fff;}
+.wrapper {
+    @include siteHorizontalPadding;
+    width: 100%;
+    max-width: $maxWidth;
+    margin-left: auto;
+    margin-right: auto;
+}
+.medium {
+    font-weight: 500;
+    font-size: 18px;
+}
+h1 {
+    font-weight: 500;
+}
+.pageCon {
+    min-height: 100%;
+    padding-top: 82px;
+    overflow: hidden;
+}

@@ -1,0 +1,135 @@
+.newsletterCon {
+    margin-top: 40px;
+    .wrapper {
+        .newsletterContentCon {
+            background-color: $accent1;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            @include forBreakpoint(mobile){
+                padding: 40px 30px;
+            }
+            .col {
+                width: 50%;
+                @include forBreakpoint(mobile tablet){
+                    width: 100%;
+                }
+                // Col 1
+                .infoHeadCon {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    display: flex;
+                    align-items: flex-end;
+                    .infoIconCon {
+                        height: 60px;
+                        width: 60px;
+                        border-radius: 50%;
+                        margin-right: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $background2;
+                        p {
+                            font-size: 14px;
+                            margin-bottom: 10px;
+                            color: $accent1;
+                        }
+                    }
+                    h2 {
+                        line-height: clamp(1rem, 5vw, 2rem);
+                        font-size: clamp(1rem, 5vw, 2rem);
+                        color: #fff;
+                        font-family: 'drunkwidemedium', sans-serif;
+                    }
+                }
+                .infoBodyP {
+                    font-size: 18px;
+                    color: #fff;
+                    line-height: 34px;
+                    font-weight: 400;
+                    margin-bottom: 60px;
+                }
+                // Col 2
+                .newsletterForm {
+                    width: 100%;
+                    label {
+                        width: 100%;
+                        font-size: 14px;
+                        color: $text1;
+                    }
+                    .inputStyle {
+                        height: 40px;
+                        margin: 5px 0 10px;
+                        width: 100%;
+                        border: 2px solid #f9f9f9;
+                        background-color: #f9f9f9;
+                        border-radius: 10px;
+                        padding: 0 10px;
+                        &.error {
+                            border: 2px solid $background2;
+                        }
+                    }
+                    .checkboxLabel {
+                        display: flex;
+                        align-items: center;
+                        p {
+                            font-size: 14px;
+                            color: $text1;
+                        }
+                        .checkboxInpStyle {
+                            margin-right: 10px;
+                            height: 15px;
+                            width: 15px;
+                            border-radius: 5px;
+                        }
+                    }
+                    .subscibeBtn {
+                        @include defaultBtn;
+                        background-color: $background2;
+                        margin-top: 15px;
+                        font-weight: 400;
+                        color: $accent1;
+                        &:hover {
+                            background-color: $background3;
+                            color: #fff;
+                        }
+                    }
+                    // response p
+                    .responseMsgP {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #fff;
+                        margin-top: 15px;
+                    }
+                }
+
+                // handle
+                &:first-child {
+                    padding-right: 20px;
+                    @include forBreakpoint(mobile tablet){
+                        padding-right: 0;
+                    }
+                }
+                &:last-child {
+                    padding-left: 20px;
+                    @include forBreakpoint(mobile tablet){
+                        padding-left: 0;
+                    }
+                }
+            }
+
+
+            // slit
+            .elementSlit {
+                position: absolute;
+                top: -1px;
+                right: -1px;
+                height: 40px;
+                width: 40px;
+                background-color: #2d2e33;
+                clip-path: polygon(0 0, 100% 0, 100% 100%);
+            }
+        }
+    }
+}

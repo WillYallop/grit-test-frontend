@@ -1,0 +1,159 @@
+.headerCon {
+    background-color: $background2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    z-index: 1000;
+    height: 82px;
+    @include forBreakpoint(mobile tablet){
+        padding: 20px 0;
+    }
+    transition: 0.3s;
+    //  Desktop
+    .navCon {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include forBreakpoint(mobile tablet){
+            display: none;
+        }
+        .navCenterCon {
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            .siteLogo {
+                height: 37px;
+                transition: 0.3s;
+                img {
+                    transition: 0.3s;
+                    height: 37px;
+                }
+            }
+        }
+        .navLinkCon {
+            width: calc(50% - 75px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:first-child {
+                padding-right: 40px;
+            }
+            &:last-child {
+                padding-left: 40px;
+            }
+            .navLink {
+                color: $text1;
+                text-decoration: none;
+                padding: 0 10px;
+                font-size: 17px;
+                font-family: 'gilroysemibold', sans-serif;
+            }
+        }
+
+    }
+    // Mobile
+    .mobHeaderWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include forBreakpoint(desktop){
+            display: none;
+        }
+        .btnCon {
+            display: flex;
+            align-items: center;
+            .toggleNavBtn {
+                @include defaultBtn;
+                padding: 8px 20px;
+                height: 42px;
+                margin-left: 10px;
+                img {
+                    width: 20px;
+                }
+            }
+        }
+ 
+    }
+    // btn
+    .navBtn {
+        @include defaultBtn;
+        padding: 12px 35px;
+        background-color: $accent1;
+        color: #fff;
+        font-size: 17px;
+        font-family: 'gilroysemibold', sans-serif;
+        &:hover {
+            background-color: $accent1Hover;
+        }
+    }
+
+    &.scrolled {
+        height: 62px;
+        padding: 10px 40px;
+        background-color: rgba($color: $background2, $alpha: 0.8);
+        @include forBreakpoint(mobile tablet){
+            padding: 10px 0;
+        }
+        .navCenterCon {
+            .siteLogo {
+                height: 25px;
+                img {
+                    height: 25px;
+                }
+            }
+        }
+    }
+}
+
+// Mobile nav
+.mobileNavCon {
+    position: fixed;
+    top: 82px;
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.95);
+    z-index: 1000;
+    transition: 0.3s;
+    &.scrolled {
+        top: 62px;
+    }
+    &.active {
+        right: 0;
+    }
+    .navCon {
+        padding: 40px 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        a {
+            display: block;
+            width: 100%;
+            font-size: 36px;
+            font-weight: 500;
+            color: rgb(228, 228, 228);
+            padding: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+            &:hover {
+                color: #fff;
+                .underline {
+                    width: 100%;
+                }
+            }
+            .underline {
+                width: 0;
+                height: 2px;
+                background-color: $accent1;
+                transition: width 0.3s;
+            }
+        }
+    }
+    @include forBreakpoint(desktop){
+        display: none;
+    }
+} 

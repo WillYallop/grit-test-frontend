@@ -1,0 +1,209 @@
+.infoSecCon {
+    z-index: 100;
+    position: relative;
+    margin-top: -150px;
+    transform: translate(0, 0);
+    animation: fadeIn ease 0.5s;
+    @keyframes fadeIn {
+        0% {transform: translate(0, 400px)}
+        100% {transform: translate(0, 0)}
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        .imgRow {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            img {
+                width: 100%;
+                height: 500px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 0;
+                object-fit: cover;
+            }
+            .triangleCol {
+                width: 50%;
+                height: 300px;
+                z-index: 10;
+                position: relative;
+                margin-bottom: -1px;
+                &.firstTri {
+                    clip-path: polygon(0 0, 100% 100%, 0 100%);
+                    background-color: $accent1;
+                }
+                &.lastTri {
+                    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+                    background-color: $background2;
+                    @media only screen and (max-width: 1000px) {
+                        display: none;
+                    }
+                }
+                @media only screen and (max-width: 1000px) {
+                    width: 100%;
+                    height: 150px;
+                }
+            }   
+        }
+            
+        .infoColCon {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            .col {
+                width: 50%;
+                padding: 40px;
+                display: flex;
+                flex-wrap: wrap;
+                @include forBreakpoint(mobile){
+                    padding: 40px 30px;
+                }
+                @media only screen and (max-width: 1000px) {
+                    width: 100%;
+                }
+                .colTopSect {
+                    .infoHeadCon {
+                        width: 100%;
+                        margin-bottom: 20px;
+                        display: flex;
+                        align-items: flex-end;
+                        .infoIconCon {
+                            height: 60px;
+                            width: 60px;
+                            border-radius: 50%;
+                            margin-right: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            p {
+                                font-size: 14px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                        h2 {
+                            line-height: clamp(1rem, 5vw, 2rem);
+                            font-size: clamp(1rem, 5vw, 2rem);
+                            color: #fff;
+                            font-family: 'drunkwidemedium', sans-serif;
+                        }
+                    }
+                    .infoBodyP {
+                        font-size: 18px;
+                        color: #fff;
+                        line-height: 34px;
+                        font-family: 'gilroymedium', sans-serif;
+                        margin-bottom: 60px;
+                    }
+                    h3 {
+                        font-size: 16px;
+                        font-family: 'gilroybold', sans-serif;
+                        color: #fff;
+                        text-transform: uppercase;
+                    }
+                    .listCon {
+                        margin-top: 40px;
+                        width: 100%;
+                        display: grid;
+                        gap: 15px 10px;
+                        grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
+                        list-style-type: none;
+                        li {
+                            display: flex;
+                            align-items: flex-start;
+                            img {
+                                width: 10px;
+                                margin-right: 20px;
+                            }
+                            .textarea {
+                                font-size: 18px;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                .colBtn {
+                    align-self: flex-end;
+                    @include defaultBtn;
+                    width: 80%;
+                    margin: 60px auto 0;
+                    padding: 28px 40px;
+                    background-color: $background2;
+                    color: $accent1;
+                    font-size: 17px;
+                    font-weight: 500;
+                    border-radius: 40px;
+                    border: 2px solid $background2;
+                    @include forBreakpoint(mobile){
+                        width: 100%;
+                        padding: 28px 20px;
+                    }
+                    &:hover {
+                        background-color: $accent1;
+                        color: #fff;
+                        border: 2px solid $accent1;
+                    }
+                }
+
+                // Specific style
+                &:first-child {
+                    background: $background2;
+                    background: linear-gradient(0deg, $background2 0%, $accent1 100%);
+                    .colTopSect {
+                        .infoHeadCon {
+                            .infoIconCon {
+                                background-color: $background2;
+                                border: 2px solid $background2;
+                                p {
+                                    color: $accent1;
+                                }
+                            }
+                        }
+                    }
+                    @media only screen and (max-width: 1000px) {
+                        padding-bottom: 190px;
+                    }
+                }
+                &:last-child {
+                    background: $background2;
+                    .colTopSect {
+                        .infoHeadCon {
+                            .infoIconCon {
+                                background-color: $background2;
+                                border: 2px solid $accent1;
+                                p {
+                                    color: $accent1;
+                                }
+                            }
+                        }
+                        .listCon {
+                            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+                        }
+                    }
+                    .colBtn {
+                        border: 2px solid $accent1;
+                    }
+  
+                }
+            }
+            .mobileColTriangle {
+                display: none;
+                clip-path: polygon(0 0, 100% 100%, 0 100%);
+                background-color: $background2;
+                width: 100%;
+                height: 150px;
+                margin-top: -150px;
+                @media only screen and (max-width: 1000px) {
+                    display: flex;
+                }
+            }
+        }
+
+    }
+}

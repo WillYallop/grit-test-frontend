@@ -1,0 +1,22 @@
+$background1: #000000;
+$background2: #36373D;
+
+$background3: #323339;
+$background4: #202024;
+
+
+$text1: #f2f2f2;
+
+$accent1: #EA5634;
+$accent1Hover: #FF6F4E;
+$accent2: #Fdce5e;
+$accent3: #0061c6;
+
+// Site Settings
+$maxWidth: 1400px;
+$sizeSiteContentWidth: 1024px;
+$mediaQueries : (
+    'mobile'    : "only screen and (max-width: 667px)",
+    'tablet'    : "only screen and (min-width: 668px) and (max-width: 1200px)",
+    'desktop'   : "only screen and (min-width: 1200px)"
+);
